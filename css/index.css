@@ -1,0 +1,29 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,900,300);
+
+* {
+    font-family: 'Lato', Arial, Helvetica, sans-serif !important;
+
+}
+
+body {
+    background: url(../img/main_background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+h1 {
+    position: relative;
+    top: 1.5em;
+}
+
+h5 {
+    position: relative;
+    top: 3.5em;
+}
+
+a {
+    position: relative;
+    top: 4em;
+}
