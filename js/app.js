@@ -1,4 +1,7 @@
 // Image files changed, so removed in chess board js
+var turns = new Object();
+var table = document.getElementById('tble')
+
 
 var game = new Chess(),
     statusEl = $('#status'),
@@ -40,6 +43,26 @@ var onSnapEnd = function () {
 };
 
 var updateStatus = function () {
+
+    var turn = Number(game.pgn().slice(-5,-4))
+
+
+
+    if(turn) {
+        turns[turn] = "";            
+    } else {
+
+        var currentKey = Object.keys(turns)[Object.keys(turns).length - 1]
+        turns[currentKey] = game.pgn().slice(-5)
+        
+    
+        var tr = "<tr>";
+        tr += "<td>" + currentKey.toString() + "." + "</td>" + "<td>" + turns[currentKey] + "</td></tr>";
+
+        table.innerHTML += tr;
+
+    }
+
     var status = '';
 
     var moveColor = 'White';
