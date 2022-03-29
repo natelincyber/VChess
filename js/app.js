@@ -2,6 +2,10 @@
 var turns = new Object();
 var table = document.getElementById('tble')
 
+var chessboard = document.getElementById('board');
+
+chessboard.style.width = "700px";
+
 
 var game = new Chess(),
     statusEl = $('#status'),
@@ -57,7 +61,7 @@ var updateStatus = function () {
         
     
         var tr = "<tr>";
-        tr += "<td>" + currentKey.toString() + "." + "</td>" + "<td>" + turns[currentKey] + "</td></tr>";
+        tr += "<td>&nbsp;" + currentKey.toString() + "." + "</td>" + "<td>" + turns[currentKey] + "&nbsp;</td></tr>";
 
         table.innerHTML += tr;
 
