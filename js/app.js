@@ -1,7 +1,7 @@
 // Image files changed, so removed in chess board js
 var turns = new Object();
 var table = document.getElementById('tble')
-
+var ptable = document.getElementById('ptble')
 var chessboard = document.getElementById('board');
 
 chessboard.style.width = "700px";
@@ -60,10 +60,12 @@ var updateStatus = function () {
         turns[currentKey] = game.pgn().slice(-5)
         
     
-        var tr = "<tr>";
-        tr += "<td>&nbsp;" + currentKey.toString() + "." + "</td>" + "<td>" + turns[currentKey] + "&nbsp;</td></tr>";
+        var tr = "<div class=\"text-center\"><tr>";
+        tr += "<td>&nbsp;" + currentKey.toString() + "." + "</td>" + "<td>" + turns[currentKey] + "&nbsp;</td></tr></div>";
 
+        ptable.style.display = "block";  
         table.innerHTML += tr;
+        
 
     }
 

@@ -69,17 +69,17 @@
 
 
     <div class="flex justify-center align-center">
-        <div class="flex justify-center max-w-1/5">
-            <div class="flex justify-center w-full">
+        <div class="flex justify-center w-1/2">
+            <div class="">
                 <p id="status-wrapper" class="w-full text-gray-300 text-2xl">Status </p>
             </div>
             <div>
                 <span id="status" class="absolute"></span>
             </div>
         </div>
-        <div class="justify-center max-w-3/5">
+        <div class="flex justify-center w-1/2">
             <div class="flex flex-col justify-center align-center">
-                <div id="board" class="fade-in"></div>
+                <div id="board" class="w-full fade-in"></div>
                 <div class="flex justify-center space-x-5 mt-3">
                     <div class="w-1/2">
                         <a href="game.html">
@@ -88,7 +88,7 @@
                         Restart
                     </button></a>
                     </div>
-                    <div class="w-1/2">
+                    <div class="flex justify-center w-1/2">
                         <button
                             class="bg-purple-400 text-black font-bold py-2.5 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out fade-in w-full" id="colorBtn" value="flip">
                             Flip
@@ -98,11 +98,13 @@
                 </div>
             </div>
         </div>
-        <div class="max-w-1/5">
+        <div class="flex justify-center w-1/2">
             <p id="pgn-wrapper" class="text-gray-300 text-2xl">PGN</p>
-            <table class="mt-2 absolute" style="border: 1px solid; border-color: #D1D5DB;">
-                <tbody id="tble" class="text-gray-300 text-xl"></tbody>
-            </table>
+            <div class="flex justify-center">
+                <table id="ptble" class="w-1/5 mt-5 absolute" style="border: 1px solid; border-color: #D1D5DB;">
+                    <tbody id="tble" class="text-center text-gray-300 text-xl"></tbody>
+                </table>
+            </div>
         </div>
     </div>
     
