@@ -3,6 +3,7 @@ var turns = new Object();
 var table = document.getElementById('tble')
 var ptable = document.getElementById('ptble')
 var chessboard = document.getElementById('board');
+var turnIndicator = document.getElementById('turn-wrapper');
 
 chessboard.style.width = "700px";
 
@@ -48,6 +49,9 @@ var onSnapEnd = function () {
 
 var updateStatus = function () {
 
+
+    
+
     var turn = Number(game.pgn().slice(-5,-4))
 
 
@@ -60,8 +64,8 @@ var updateStatus = function () {
         turns[currentKey] = game.pgn().slice(-5)
         
     
-        var tr = "<div class=\"text-center\"><tr>";
-        tr += "<td>&nbsp;" + currentKey.toString() + "." + "</td>" + "<td>" + turns[currentKey] + "&nbsp;</td></tr></div>";
+        var tr = "";
+        tr += "<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + currentKey.toString() + "." + "</td>" + "<td>" + turns[currentKey] + "&nbsp;</td></tr></div>";
 
         ptable.style.display = "block";  
         table.innerHTML += tr;
@@ -69,7 +73,7 @@ var updateStatus = function () {
 
     }
 
-    var status = '';
+    var status = 'White to move';
 
     var moveColor = 'White';
     if (game.turn() === 'b') {
@@ -94,6 +98,14 @@ var updateStatus = function () {
         if (game.in_check() === true) {
             status += ', ' + moveColor + ' is in check';
         }
+    }
+    
+    
+    if(status == "White to move") {
+    
+        turnIndicator.innerHTML = "<img width=\"200\" height=\"200\" src=\"img/whitepawn.svg\"></img>"
+    } else {
+        turnIndicator.innerHTML = "<img width=\"200\" height=\"200\" src=\"img/blackpawn.svg\"></img>"
     }
 
     statusEl.html(status);
