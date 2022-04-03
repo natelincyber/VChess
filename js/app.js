@@ -62,7 +62,9 @@ var updateStatus = function () {
 
         var currentKey = Object.keys(turns)[Object.keys(turns).length - 1]
         turns[currentKey] = game.pgn().slice(-5)
-        
+        console.log(game.pgn())
+        console.log(currentKey)
+        console.log(turns[currentKey]);
     
         var tr = "";
         tr += "<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + currentKey.toString() + "." + "</td>" + "<td>" + turns[currentKey] + "&nbsp;</td></tr></div>";
