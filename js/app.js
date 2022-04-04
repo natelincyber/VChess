@@ -52,11 +52,11 @@ var updateStatus = function () {
 
     
 
-    var turn = Number(game.pgn().slice(-5,-4))
+    //var turn = Number(game.pgn().slice(-5,-4))
 
 
 
-    if(turn) {
+    /*if(turn) {
         turns[turn] = "";            
     } else {
 
@@ -73,7 +73,7 @@ var updateStatus = function () {
         table.innerHTML += tr;
         
 
-    }
+    } */
 
     var status = 'White to move';
 
