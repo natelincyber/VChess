@@ -158,6 +158,14 @@ var alanBtnInstance = alanBtn({
 });
 
 
+document.addEventListener("keydown", function(event) {
+    if (event.key == 'r') {
+        window.location.reload();
+    } else if (event.key == 'f') {
+        document.getElementById('colorBtn').click();
+    }
+});
+
 $('#startBtn').on('click', function () {
     window.location.reload();
 
