@@ -93,8 +93,8 @@
 
         <div class="w-full flex items-center justify-between">
 
-            <a class="flex items-center text-indigo-400 no-underline hover:no-underline font-bold text-3xl lg:text-4xl"
-                href="index.html">
+            <a class="flex items-center text-green-400 no-underline hover:no-underline text-3xl lg:text-4xl"
+                href="#">
                 <img width="45" height="45" src="img/pawn.svg"></img> VChess
             </a>
 
@@ -107,12 +107,15 @@
         <div class="flex justify-center w-1/2">
             <div>
                 <p class="text-gray-300 text-2xl" >Status</p>
+                <div class="w-28 border-t border-white"></div>
+                <p class="absolute text-red-300 text-xl mt-3 transform translate-x-5"><span id="win"></span></p>
                 <div class="mt-64" id="turn-wrapper">
                     <span class="text-xl" id="status"></span>
                 </div>
+
             </div>
         </div>
-        <div class="flex justify-center w-1/2">
+        <div class="flex justify-center w-1/2 mt-4">
             <div class="flex flex-col justify-center align-center">
                 <div id="board" class="w-full fade-in"></div>
                 <div class="flex justify-center space-x-5 mt-3">

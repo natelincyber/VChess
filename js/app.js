@@ -5,6 +5,8 @@ var ptable = document.getElementById('ptble')
 var chessboard = document.getElementById('board');
 var turnIndicator = document.getElementById('turn-wrapper');
 
+var winner = document.getElementById('win');
+
 chessboard.style.width = "700px";
 
 
@@ -85,11 +87,13 @@ var updateStatus = function () {
     // checkmate?
     if (game.in_checkmate() === true) {
         status = 'Game over, ' + moveColor + ' is in checkmate.'
+        winner.innerHTML = status;
     }
 
     // draw?
     else if (game.in_draw() === true) {
         status = 'Game over, drawn position';
+        winner.innerHTML = status;
     }
 
     // game still on
@@ -98,7 +102,8 @@ var updateStatus = function () {
 
         // check?
         if (game.in_check() === true) {
-            status += ', ' + moveColor + ' is in check';
+            status = moveColor + ' is in check';
+            winner.innerHTML = status;
         }
     }
     
